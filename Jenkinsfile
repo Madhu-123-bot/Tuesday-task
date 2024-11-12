@@ -34,7 +34,7 @@ pipeline {
       steps {
         script {
           // Ensure permissions are correct for the private key
-          sh 'chmod 600 /var/lib/jenkins/workspace/tues-task-pipeline-nodeapp/ssh8633610058472328627.key'
+          sh 'chmod 700 /var/lib/jenkins/workspace/tues-task-pipeline-nodeapp/ssh8633610058472328627.key'
 
           // Set the path to Ansible in case Jenkins can't find it
           withEnv(["PATH+ANSIBLE=/usr/local/bin:/usr/bin"]) {
