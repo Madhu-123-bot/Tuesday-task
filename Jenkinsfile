@@ -34,13 +34,13 @@ pipeline {
       steps {
         script {
           // Ensure permissions are correct for the private key
-          sh 'chmod 600 /var/lib/jenkins/workspace/first-task/ssh8633610058472328627.key'
+          sh 'chmod 600 /var/lib/jenkins/workspace/tues-task-pipeline-nodeapp/ssh8633610058472328627.key'
 
           // Set the path to Ansible in case Jenkins can't find it
           withEnv(["PATH+ANSIBLE=/usr/local/bin:/usr/bin"]) {
             // Use sh step to run ansible-playbook command
             sh '''
-              ansible-playbook playbook.yml -i hosts.txt --private-key /var/lib/jenkins/workspace/first-task/ssh8633610058472328627.key -u ubuntu
+              ansible-playbook playbook.yml -i hosts.txt --private-key /var/lib/jenkins/workspace/tues-task-pipeline-nodeapp/ssh8633610058472328627.key -u ubuntu
             '''
           }
         }
